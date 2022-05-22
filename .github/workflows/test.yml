@@ -1,0 +1,40 @@
+name: Test Types
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  py-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          cd python
+          pip install pipenv
+          pipenv install --dev
+      - name: Test
+        run: |
+          cd python
+          pipenv run test
+  js-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install node.js
+        uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: |
+          cd js
+          npm ci
+      - name: Test
+        run: |
+          cd js
+          npm run test

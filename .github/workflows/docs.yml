@@ -1,0 +1,92 @@
+name: Build Docs
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  py-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: Install dependencies
+        run: |
+          cd python
+          pip install pipenv
+          pipenv install --dev
+      - name: Build docs
+        run: |
+          cd python/docs
+          pipenv run make html
+      - name: Make output directory
+        run: mkdir -p _artifacts
+      - name: Compress docs
+        run: |
+          cd python/docs/_build/html
+          touch .nojekyll
+          tar -czf ../../../../_artifacts/docs.tar.gz .
+      - name: Upload docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: python-docs.tar.gz
+          path: _artifacts/docs.tar.gz
+  js-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install node.js
+        uses: actions/setup-node@v3
+      - name: Install dependencies
+        run: |
+          cd js
+          npm ci
+      - name: Build docs
+        run: |
+          cd js
+          npm run docs
+      - name: Make output directory
+        run: mkdir -p _artifacts
+      - name: Compress docs
+        run: |
+          cd js/docs/
+          tar -czf ../../_artifacts/docs.tar.gz .
+      - name: Upload docs
+        uses: actions/upload-artifact@v3
+        with:
+          name: js-docs.tar.gz
+          path: _artifacts/docs.tar.gz
+  upload-all-docs:
+    needs:
+      - py-docs
+      - js-docs
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    steps:
+      - uses: actions/checkout@v2
+      - run: mkdir -p docs/js
+      - name: Get Python docs
+        uses: actions/download-artifact@v3
+        with:
+          name: python-docs.tar.gz
+          path: docs/py
+      - name: Get JavaScript docs
+        uses: actions/download-artifact@v3
+        with:
+          name: js-docs.tar.gz
+          path: docs/js
+      - name: Extract Python docs
+        run: tar -xzf docs/py/docs.tar.gz -C docs
+      - name: Extract JavaScript docs
+        run: tar -xzf docs/js/docs.tar.gz -C docs/js
+      - run: find . -type f -name "*.gz" -delete
+      - name: Deploy docs
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.

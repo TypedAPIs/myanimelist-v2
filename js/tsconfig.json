@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "strict": true,
+    "allowJs": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+  },
+  "exclude": [
+    "node_modules",
+    "docs"
+  ]
+}

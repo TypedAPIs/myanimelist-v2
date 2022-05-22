@@ -1,0 +1,30 @@
+{
+  "name": "@typed-apis/example-site",
+  "version": "1.0.0",
+  "description": "Types for the api at example.com",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "scripts": {
+    "test": "tsc -p tsconfig.json",
+    "docs": "typedoc src/index.ts",
+    "clean": "find src tests -type f \\( -name '*.js' -o -name '*.d.ts' \\) -delete",
+    "lint-check": "prettier --check 'src/**/*.ts' 'tests/**/*.ts' 'tests/**/*.json'",
+    "lint": "prettier --write 'src/**/*.ts' 'tests/**/*.ts' 'tests/**/*.json'"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TypedAPIs/template.git"
+  },
+  "author": "PythonCoderAS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TypedAPIs/template/issues"
+  },
+  "homepage": "https://github.com/TypedAPIs/template#readme",
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "typedoc": "^0.22.15",
+    "typescript": "^4.6.3"
+  }
+}
