@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 typing-extensions = "*"
-example-site-api-types = {editable = true, path = "./python"}
+myanimelist-v2-api-types = {editable = true, path = "./python"}
 
 [dev-packages]
 sphinx = "*"
