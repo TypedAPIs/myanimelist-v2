@@ -1,5 +1,5 @@
 myanimelist.net v2 API Types
-----------------------
+----------------------------
 
 This package contains types for the ``myanimelist.net v2`` API.
 

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ff88d3d27c76470436cb26637aba45b4c924680c8db4c779d01b981acb3eefe8"
+            "sha256": "bcb0ad7214ee456ddf3d48de63d854758cc3f61642d5142d4668856244cf4f8c"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -17,6 +17,10 @@
     },
     "default": {
         "example-site-api-types": {
+            "editable": true,
+            "path": "./python"
+        },
+        "myanimelist-v2-api-types": {
             "editable": true,
             "path": "./python"
         },

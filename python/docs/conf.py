@@ -12,7 +12,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath(os.path.join(__file__, "..", "..", "src")))
 
 
 # -- Project information -----------------------------------------------------
@@ -32,11 +32,11 @@ release = "1.0"
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx'
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.autosectionlabel",
 ]
 
-intersphinx_mapping = {'python': ('https://docs.python.org/3',
-                                  (None, 'python-inv.txt'))}
+intersphinx_mapping = {"python": ("https://docs.python.org/3", (None,))}
 
 autodoc_docstring_signature = True
 
