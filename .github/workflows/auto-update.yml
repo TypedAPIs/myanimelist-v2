@@ -1,4 +1,4 @@
-name: Auto NPM Update
+name: Auto Update
 
 # Controls when the workflow will run
 on:
@@ -7,7 +7,7 @@ on:
     - cron: "0 0 * * *" # Runs every day at midnight
 
 jobs:
-  update:
+  update-npm:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +17,9 @@ jobs:
         with:
           node-version: 18
       - name: Update dependencies
-        run: npm upgrade
+        run: |
+          cd js
+          npm upgrade
       - uses: tibdex/github-app-token@v1
         id: generate-token
         with:
@@ -32,6 +34,35 @@ jobs:
           commit-message: "Update dependencies via `npm upgrade`."
           branch: "create-pull-request/auto-npm-update"
           branch-suffix: "timestamp"
-          labels: "auto-npm-update,dependencies,javascript"
+          labels: "auto-update,dependencies,javascript"
+          delete-branch: true
+          token: ${{ steps.generate-token.outputs.token }}
+
+  update-python:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: Update dependencies
+        run: pipenv lock
+      - uses: tibdex/github-app-token@v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.APP_ID }}
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v4
+        with:
+          title: "Auto Pipenv Update"
+          body: "This PR was created automatically by the Auto Pipenv Update workflow."
+          signoff: true
+          commit-message: "Update dependencies via `pipenv lock`."
+          branch: "create-pull-request/auto-pipenv-update"
+          branch-suffix: "timestamp"
+          labels: "auto-update,dependencies,python"
           delete-branch: true
           token: ${{ steps.generate-token.outputs.token }}
