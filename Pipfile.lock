@@ -226,11 +226,11 @@
         },
         "furo": {
             "hashes": [
-                "sha256:7f3e3d2fb977483590f8ecb2c2cd511bd82661b79c18efb24de9558bc9cdf2d7",
-                "sha256:96204ab7cd047e4b6c523996e0279c4c629a8fc31f4f109b2efd470c17f49c80"
+                "sha256:79f2d3a61e3d971c0acd59f53d3202e7336789cd893f7bdc3cc7bc37d6ef252c",
+                "sha256:c927848edf3292030d0719ebdab9e16d56f1b91c68562b9be316aa5b843775ab"
             ],
             "index": "pypi",
-            "version": "==2022.4.7"
+            "version": "==2022.6.4.1"
         },
         "idna": {
             "hashes": [
@@ -506,6 +506,14 @@
             ],
             "index": "pypi",
             "version": "==4.5.0"
+        },
+        "sphinx-basic-ng": {
+            "hashes": [
+                "sha256:9aecb5345816998789ef76658a83e3c0a12aafa14b17d40e28cd4aaeb94d1517",
+                "sha256:bf9a8fda0379c7d2ab51c9543f2b18e014b77fb295b49d64f3c1a910c863b34f"
+            ],
+            "markers": "python_version >= '3.7'",
+            "version": "==0.0.1a11"
         },
         "sphinxcontrib-applehelp": {
             "hashes": [
