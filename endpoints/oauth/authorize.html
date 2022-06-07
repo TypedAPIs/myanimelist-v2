@@ -1,11 +1,11 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Glossary" href="../../glossary.html" /><link rel="prev" title="myanimelist.net v2 API Types" href="../../index.html" />
 
-    <meta name="generator" content="sphinx-4.5.0, furo 2022.06.04.1"/>
+    <meta name="generator" content="sphinx-5.0.1, furo 2022.06.04.1"/>
         <title>OAuth Authorize - myanimelist-v2 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
@@ -196,11 +196,11 @@
         </div>
         <article role="main">
           <section id="oauth-authorize">
-<h1>OAuth Authorize<a class="headerlink" href="#oauth-authorize" title="Permalink to this headline">#</a></h1>
+<h1>OAuth Authorize<a class="headerlink" href="#oauth-authorize" title="Permalink to this heading">#</a></h1>
 <p>Endpoint: <code class="docutils literal notranslate"><span class="pre">https://myanimelist.net/v1/oauth2/authorize</span></code></p>
 <span class="target" id="module-myanimelist_v2_api_types.oauth.authorize"></span><dl class="py class">
 <dt class="sig sig-object py" id="myanimelist_v2_api_types.oauth.authorize.AuthorizeParams">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">myanimelist_v2_api_types.oauth.authorize.</span></span><span class="sig-name descname"><span class="pre">AuthorizeParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#myanimelist_v2_api_types.oauth.authorize.AuthorizeParams" title="myanimelist_v2_api_types.oauth.authorize.AuthorizeParams"><span class="pre">AuthorizeParams</span></a></span></span><a class="headerlink" href="#myanimelist_v2_api_types.oauth.authorize.AuthorizeParams" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">myanimelist_v2_api_types.oauth.authorize.</span></span><span class="sig-name descname"><span class="pre">AuthorizeParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#myanimelist_v2_api_types.oauth.authorize.AuthorizeParams" title="Permalink to this definition">#</a></dt>
 <dt class="sig sig-object py">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">myanimelist_v2_api_types.oauth.authorize.</span></span><span class="sig-name descname"><span class="pre">AuthorizeParams</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">attrs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#myanimelist_v2_api_types.oauth.authorize.AuthorizeParams" title="myanimelist_v2_api_types.oauth.authorize.AuthorizeParams"><span class="pre">AuthorizeParams</span></a></span></span></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></a></p>
@@ -243,7 +243,7 @@ it means that you have to set the Code Challenge equal to the Code Verifier. Sim
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="myanimelist_v2_api_types.oauth.authorize.AuthorizeParams.code_challenge_method">
-<span class="sig-name descname"><span class="pre">code_challenge_method</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">typing_extensions.NotRequired</span><span class="p"><span class="pre">[</span></span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'plain'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#myanimelist_v2_api_types.oauth.authorize.AuthorizeParams.code_challenge_method" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">code_challenge_method</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">typing_extensions.NotRequired</span><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.10)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'plain'</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#myanimelist_v2_api_types.oauth.authorize.AuthorizeParams.code_challenge_method" title="Permalink to this definition">#</a></dt>
 <dd><p>The method used to generate the code challenge. Must be <code class="docutils literal notranslate"><span class="pre">plain</span></code>.</p>
 </dd></dl>
 
@@ -255,7 +255,7 @@ it means that you have to set the Code Challenge equal to the Code Verifier. Sim
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="myanimelist_v2_api_types.oauth.authorize.AuthorizeParams.response_type">
-<span class="sig-name descname"><span class="pre">response_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Literal</span><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'code'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#myanimelist_v2_api_types.oauth.authorize.AuthorizeParams.response_type" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">response_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.10)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="s"><span class="pre">'code'</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#myanimelist_v2_api_types.oauth.authorize.AuthorizeParams.response_type" title="Permalink to this definition">#</a></dt>
 <dd><p>The response type. Must be <code class="docutils literal notranslate"><span class="pre">code</span></code>.</p>
 </dd></dl>
 
@@ -325,6 +325,7 @@ a random unique string for every authorization request.</p>
 </div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/scripts/furo.js"></script>
     </body>
